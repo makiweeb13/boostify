@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "874867511170",
+    "firebase_url": "https://boostify-2203n-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "boostify-2203n",
+    "storage_bucket": "boostify-2203n.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874867511170:android:ede6a117e97a174b3d099b",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1WLPlygYSi9QGGxvhd22eyh1PqCrSfGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
