@@ -50,4 +50,6 @@
     <string name="sign_up">Sign up</string>
     <string name="login_now">Login now</string>
     <string name="sign_up_here">Sign Up Here</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
 </resources>
