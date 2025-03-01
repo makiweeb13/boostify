@@ -44,18 +44,9 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         else{ //IF USER IS LOGGED IN, DISPLAY EMAIL
-            textView.setText(user.getEmail());
+            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+            startActivity(intent);
+            finish();
         }
-        //LOGOUT BUTTON
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
     }
 }
