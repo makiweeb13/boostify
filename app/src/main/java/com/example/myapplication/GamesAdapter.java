@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHolder> {
-    private List<String> gamesList;
+    private List<Game> gamesList;
 
-    public GamesAdapter(List<String> gamesList) {
+    public GamesAdapter(List<Game> gamesList) {
         this.gamesList = gamesList;
     }
 
@@ -35,8 +35,8 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHold
 
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
-        String currentGame = gamesList.get(position);
-        holder.gameNameTextView.setText(currentGame);
+        Game currentGame = gamesList.get(position);
+        holder.gameNameTextView.setText(currentGame.name);
     }
 
     @Override
