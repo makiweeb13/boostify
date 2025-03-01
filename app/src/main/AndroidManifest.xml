@@ -42,6 +42,16 @@
             android:exported="false"
             android:theme="@style/Theme.MyApplication">
         </activity>
+        <activity
+            android:name=".GameDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication">
+        </activity>
+        <activity
+            android:name=".BoostRequestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication">
+        </activity>
     </application>
 
 </manifest>

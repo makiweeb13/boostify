@@ -7,11 +7,15 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.databinding.ActivityBoostRequestBinding;
+
 public class BoostRequestActivity extends AppCompatActivity {
+    private ActivityBoostRequestBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boost_request);
+        binding = ActivityBoostRequestBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Service Type Dropdown
         AutoCompleteTextView serviceTypeDropdown = findViewById(R.id.serviceTypeDropdown);
@@ -21,7 +25,7 @@ public class BoostRequestActivity extends AppCompatActivity {
 
         // Payment Method Dropdown
         AutoCompleteTextView paymentMethodDropdown = findViewById(R.id.paymentMethodDropdown);
-        String[] paymentMethodOptions = {"GCash", "Banks"};
+        String[] paymentMethodOptions = {"GCash", "Bank"};
         ArrayAdapter<String> paymentMethodAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, paymentMethodOptions);
         paymentMethodDropdown.setAdapter(paymentMethodAdapter);
 

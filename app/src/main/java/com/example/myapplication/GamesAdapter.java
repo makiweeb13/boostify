@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -12,16 +15,19 @@ import java.util.List;
 
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHolder> {
     private List<Game> gamesList;
-
-    public GamesAdapter(List<Game> gamesList) {
+    private Context context;
+    public GamesAdapter(List<Game> gamesList, Context context) {
         this.gamesList = gamesList;
+        this.context = context;
     }
 
     public static class GameViewHolder extends RecyclerView.ViewHolder {
         public TextView gameNameTextView;
+        public CardView cardView;
         public GameViewHolder(CardView itemView) {
             super(itemView);
             gameNameTextView = itemView.findViewById(R.id.gameNameTextView);
+            cardView = itemView;
         }
     }
 
@@ -37,6 +43,15 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHold
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
         Game currentGame = gamesList.get(position);
         holder.gameNameTextView.setText(currentGame.name);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to GameDetailsActivity
+                Intent intent = new Intent(context, GameDetailsActivity.class);
+                intent.putExtra("game", currentGame);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

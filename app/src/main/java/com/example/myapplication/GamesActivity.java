@@ -46,7 +46,7 @@ public class GamesActivity extends AppCompatActivity {
         gamesRef = database.getReference("Game");
 
         // Set up RecyclerView
-        gamesAdapter = new GamesAdapter(gameList);
+        gamesAdapter = new GamesAdapter(gameList, this);
         binding.gamesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.gamesRecyclerView.setAdapter(gamesAdapter);
 
