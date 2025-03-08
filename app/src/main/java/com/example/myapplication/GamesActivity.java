@@ -23,7 +23,7 @@ public class GamesActivity extends AppCompatActivity {
     private ActivityGameListBinding binding;
     private GamesAdapter gamesAdapter;
     private List<Game> gameList;
-    private List<Game> originalGameList;
+
     private DatabaseReference gamesRef;
 
     @Override
@@ -39,7 +39,6 @@ public class GamesActivity extends AppCompatActivity {
 
         // Initialize the game list
         gameList = new ArrayList<>();
-        originalGameList = new ArrayList<>();
 
         // Get a reference to the "games" node in the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -72,14 +71,16 @@ public class GamesActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                originalGameList.clear();
+                gameList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    String gameId = dataSnapshot.getKey();
                     Game game = dataSnapshot.getValue(Game.class);
-                    originalGameList.add(game);
+                    if (game != null) {
+                        game.id = gameId;
+                    }
+                    gameList.add(game);
                 }
                 // Update the gameList and notify the adapter
-                gameList.clear();
-                gameList.addAll(originalGameList);
                 gamesAdapter.notifyDataSetChanged();
             }
 

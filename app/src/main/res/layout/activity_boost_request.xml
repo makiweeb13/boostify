@@ -22,25 +22,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- User Profile (Temporary) -->
-        <TextView
-            android:id="@+id/userProfileLabel"
-            android:layout_width="wrap_content"
+        <!-- Boosters Dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/boostersDropdownLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Selected User Profile:"
-            android:textStyle="bold"
+            android:layout_marginTop="180dp"
+            android:hint="Boosters"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/boostRequestTitle" />
+            app:layout_constraintTop_toBottomOf="@id/serviceTypeDropdownLayout"
+            tools:ignore="HardcodedText">
 
-        <TextView
-            android:id="@+id/userProfileName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="User123"
-            app:layout_constraintStart_toEndOf="@id/userProfileLabel"
-            app:layout_constraintTop_toTopOf="@id/userProfileLabel" />
+            <AutoCompleteTextView
+                android:id="@+id/boostersDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Service Type Dropdown -->
         <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Service Type"
-            app:layout_constraintTop_toBottomOf="@id/userProfileLabel">
+            app:layout_constraintTop_toBottomOf="@id/boostRequestTitle">
 
             <AutoCompleteTextView
                 android:id="@+id/serviceTypeDropdown"
@@ -110,19 +110,21 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Message Input -->
+
+        <!-- Submit and Cancel Buttons -->
         <EditText
             android:id="@+id/messageInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="80dp"
             android:hint="Message"
             android:inputType="textMultiLine"
             android:lines="3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/paymentMethodDropdownLayout" />
 
-        <!-- Submit and Cancel Buttons -->
         <Button
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"

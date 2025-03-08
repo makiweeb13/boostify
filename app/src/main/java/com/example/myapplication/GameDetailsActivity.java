@@ -65,6 +65,7 @@ public class GameDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Navigate to BoostRequestActivity
                 Intent intent = new Intent(GameDetailsActivity.this, BoostRequestActivity.class);
+                intent.putExtra("gameId", game.id);
                 startActivity(intent);
             }
         });

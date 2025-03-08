@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Game implements Parcelable {
+    public String id;
     public String developer;
     public String genre;
     public String name;
@@ -13,7 +14,8 @@ public class Game implements Parcelable {
         // Default constructor required for calls to DataSnapshot.getValue(Game.class)
     }
 
-    public Game(String developer, String genre, String name, String platform) {
+    public Game(String id, String developer, String genre, String name, String platform) {
+        this.id = id;
         this.developer = developer;
         this.genre = genre;
         this.name = name;
@@ -21,6 +23,7 @@ public class Game implements Parcelable {
     }
 
     protected Game(Parcel in) {
+        id = in.readString();
         developer = in.readString();
         genre = in.readString();
         name = in.readString();
@@ -46,6 +49,7 @@ public class Game implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeString(developer);
         dest.writeString(genre);
         dest.writeString(name);
