@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +26,16 @@ public class GamesActivity extends AppCompatActivity {
     private List<Game> gameList;
     private List<Game> originalGameList;
     private DatabaseReference gamesRef;
+    private SearchView gamesSearchView; // Declare the SearchView variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         binding = ActivityGameListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        gamesSearchView = findViewById(R.id.gamesSearchView); // Initialize the SearchView
+        gamesSearchView.clearFocus(); // Clear focus from the SearchView(It will show line of code in the search box if this line is not included)
+
 
         // Set the title in the ActionBar
         if (getSupportActionBar() != null) {
@@ -61,8 +66,9 @@ public class GamesActivity extends AppCompatActivity {
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+            public boolean onQueryTextChange(String newText) { //Reacts on inputted text in the search box
+                filterGames(newText);
+                return true;
             }
         });
     }
@@ -89,5 +95,24 @@ public class GamesActivity extends AppCompatActivity {
                 Log.e("GameActivity", "Error fetching games", error.toException());
             }
         });
+    }
+
+    //Displays the search results in the recycler view based on the query, non-case sensitive
+    private void filterGames(String query) {
+        List<Game> filteredList = new ArrayList<>();
+        for (Game game : originalGameList) {
+            if (game.name.toLowerCase().contains(query.toLowerCase())) {
+                filteredList.add(game);
+            }
+            if (filteredList.isEmpty()){
+                Toast.makeText(this, "No Games Found", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                gamesAdapter.setFilteredList(filteredList);
+            }
+        }
+        gameList.clear();
+        gameList.addAll(filteredList);
+        gamesAdapter.notifyDataSetChanged();
     }
 }
