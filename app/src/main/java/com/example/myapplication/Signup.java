@@ -24,6 +24,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Signup extends AppCompatActivity {
 
@@ -32,6 +37,7 @@ public class Signup extends AppCompatActivity {
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView textView;
+    DatabaseReference databaseReference;
     //CHECKS IF USER IS ALREADY LOGGED IN
     @Override
     public void onStart() {
@@ -56,6 +62,8 @@ public class Signup extends AppCompatActivity {
         buttonSignup = findViewById(R.id.signupbtn);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.loginNow);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         //LOGIN NOW
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +98,12 @@ public class Signup extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
+                                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                                    if (firebaseUser != null) {
+                                        String userId = firebaseUser.getUid();
+                                        String userEmail = firebaseUser.getEmail();
+                                        storeAdditionalUserInfo(userId, userEmail);
+                                    }
                                     Toast.makeText(Signup.this,"Account created",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
@@ -104,6 +118,24 @@ public class Signup extends AppCompatActivity {
                         });
 
 
+            }
+        });
+    }
+
+    private void storeAdditionalUserInfo(String userId, String email) {
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("Deactivated?", false);
+        userMap.put("accountLevel", 4);
+        userMap.put("email", email);
+
+        databaseReference.child("users").child(userId).setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(Signup.this, "User information saved successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Signup.this, "Failed to save user information", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
