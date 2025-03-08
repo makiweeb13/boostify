@@ -21,6 +21,11 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHold
         this.context = context;
     }
 
+    public void setFilteredList(List<Game> filteredList) {
+        this.gamesList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public static class GameViewHolder extends RecyclerView.ViewHolder {
         public TextView gameNameTextView;
         public CardView cardView;
