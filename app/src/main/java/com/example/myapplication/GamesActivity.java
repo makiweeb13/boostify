@@ -101,7 +101,7 @@ public class GamesActivity extends AppCompatActivity {
     //Displays the search results in the recycler view based on the query, non-case sensitive
     private void filterGames(String query) {
         List<Game> filteredList = new ArrayList<>();
-        for (Game game : originalGameList) {
+        for (Game game : gameList) {
             if (game.name.toLowerCase().contains(query.toLowerCase())) {
                 filteredList.add(game);
             }
