@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620762195020",
+    "project_id": "boostify-66654",
+    "storage_bucket": "boostify-66654.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620762195020:android:9af1b727bd1b6d52c080e9",
+        "android_client_info": {
+          "package_name": "com.example.dashboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBahE4gK09H0vB65yvbetObO0fx8motXys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

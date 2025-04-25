@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Dashboard</string>
+    <string name="boosting_your_dreams_to_life">Boosting your Dreams to Life</string>
+    <string name="providing_boosting_nservices_to_you">Providing Boosting\nServices to You</string>
+    <string name="hi_clive_owen">Hi, Clive Owen</string>
+    <string name="how_are_you_today">How Are You Today?</string>
+    <string name="notification">Notification</string>
+    <string name="banner">banner</string>
+    <string name="searching">Searching...</string>
+    <string name="game_genre">Game Genre</string>
+    <string name="see_all">See all</string>
+    <string name="top_boosters">Top Boosters</string>
+    <string name="see_all_2">See all</string>
+    <string name="explore">Explore</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="request_booster">Request Booster</string>
+
+</resources>
