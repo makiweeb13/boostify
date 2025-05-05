@@ -25,7 +25,7 @@ public class DashboardActivity extends AppCompatActivity {
         textView = findViewById(R.id.user_details);
         button = findViewById(R.id.logout);
         user = FirebaseAuth.getInstance().getCurrentUser();
-
+        //Email Text
         if (user != null) {
             textView.setText(user.getEmail());
         }
@@ -41,6 +41,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        //Floating Add request button
         floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -52,4 +52,7 @@
     <string name="sign_up_here">Sign Up Here</string>
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
+    <string name="log_in">LOG IN</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_inbtn">LOG IN</string>
 </resources>
