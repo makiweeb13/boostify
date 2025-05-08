@@ -44,7 +44,9 @@
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
-        app:boxBackgroundColor="#2F2856">
+        app:boxBackgroundColor="#2F2856"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
@@ -65,7 +67,9 @@
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
-        app:boxBackgroundColor="#2F2856">
+        app:boxBackgroundColor="#2F2856"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
