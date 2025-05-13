@@ -3,4 +3,7 @@
     <item name="surname" type="id" />
     <item name="firstName" type="id" />
     <item name="confirmPassword" type="id" />
+    <item name="returnToLogin" type="id" />
+    <item name="title" type="id" />
+    <item name="sendEmailButton" type="id" />
 </resources>

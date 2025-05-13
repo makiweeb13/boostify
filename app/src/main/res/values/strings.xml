@@ -45,14 +45,13 @@
     </string>
     <string name="login">Login</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="Login">Login</string>
+    <string name="password">Password</string>>
     <string name="sign_up">Sign Up</string>
     <string name="login_now">Login now</string>
-    <string name="sign_up_here">Sign Up Here</string>
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
-    <string name="log_in">LOG IN</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="log_inbtn">LOG IN</string>
+    <string name="return_to_log_in">Return to Log In</string>
+    <item name="titleText" type="id" />
 </resources>
