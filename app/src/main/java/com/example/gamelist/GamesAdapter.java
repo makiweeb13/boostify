@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dashboard.R;
+
 import java.util.List;
 
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHolder> {
