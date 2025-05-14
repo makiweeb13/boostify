@@ -32,7 +32,7 @@ public class GameDetailsActivity extends AppCompatActivity {
 
         // Set the title in the ActionBar
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(game.name);
+            getSupportActionBar().setTitle(game.developer);
         }
 
         // Display the game details

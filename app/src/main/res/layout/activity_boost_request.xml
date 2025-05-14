@@ -22,6 +22,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Games Dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gamesDropdownLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:hint="Game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/serviceTypeDropdownLayout"
+            tools:ignore="HardcodedText">
+
+            <AutoCompleteTextView
+                android:id="@+id/gamesDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Boosters Dropdown -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/boostersDropdownLayout"
@@ -29,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
-            android:hint="Boosters"
+            android:hint="Booster"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/serviceTypeDropdownLayout"
@@ -112,11 +132,12 @@
         <!-- Message Input -->
 
         <!-- Submit and Cancel Buttons -->
+
         <EditText
             android:id="@+id/messageInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="160dp"
             android:hint="Message"
             android:inputType="textMultiLine"
             android:lines="3"
@@ -140,11 +161,12 @@
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Cancel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/submitButton"
-            app:layout_constraintTop_toTopOf="@id/submitButton" />
+            app:layout_constraintTop_toBottomOf="@id/messageInput" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

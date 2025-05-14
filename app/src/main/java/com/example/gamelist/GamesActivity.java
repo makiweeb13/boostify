@@ -36,12 +36,6 @@ public class GamesActivity extends AppCompatActivity {
         gamesSearchView = findViewById(R.id.gamesSearchView); // Initialize the SearchView
         gamesSearchView.clearFocus(); // Clear focus from the SearchView(It will show line of code in the search box if this line is not included)
 
-
-        // Set the title in the ActionBar
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Search Games");
-        }
-
         // Initialize the game list
         gameList = new ArrayList<>();
 
