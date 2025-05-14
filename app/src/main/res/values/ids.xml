@@ -9,4 +9,10 @@
     <item name="game_name_input" type="id" />
     <item name="discover_games_label" type="id" />
     <item name="discover_games_container" type="id" />
+    <item name="surname" type="id" />
+    <item name="firstName" type="id" />
+    <item name="confirmPassword" type="id" />
+    <item name="returnToLogin" type="id" />
+    <item name="title" type="id" />
+    <item name="sendEmailButton" type="id" />
 </resources>
