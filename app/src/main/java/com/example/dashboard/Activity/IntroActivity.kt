@@ -16,7 +16,7 @@ class IntroActivity : BaseActivity() {
 
         binding.apply {
             startBtn.setOnClickListener {
-                startActivity(Intent(this@IntroActivity, MainActivity::class.java))
+                startActivity(Intent(this@IntroActivity, com.example.user.Login::class.java))
             }
         }
     }

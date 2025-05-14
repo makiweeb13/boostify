@@ -49,7 +49,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GameViewHold
     @Override
     public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
         Game currentGame = gamesList.get(position);
-        holder.gameNameTextView.setText(currentGame.name);
+        holder.gameNameTextView.setText(currentGame.developer);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

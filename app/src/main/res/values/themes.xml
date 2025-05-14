@@ -13,4 +13,10 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/my_primary_color</item>-->
+<!--        <item name="colorOnPrimary">@color/my_on_primary_color</item>-->
+        <!-- ... other theme attributes ... -->
+    </style>
 </resources>

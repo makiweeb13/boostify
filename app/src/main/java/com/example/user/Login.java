@@ -69,37 +69,42 @@ public class Login extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                String email, password;
-                email = String.valueOf(editTextEmail.getText());
-                password = String.valueOf(editTextPassword.getText());
-                //CHECKS IF EMAIL AND PASSWORD FIELDS ARE EMPTY
-                if (TextUtils.isEmpty(email)){
-                    Toast.makeText(Login.this,"Enter Email",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(password)){
-                    Toast.makeText(Login.this,"Enter Password",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                //API FOR LOGIN
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), com.example.dashboard.Activity.MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-
-                                    Toast.makeText(Login.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+//                progressBar.setVisibility(View.VISIBLE);
+//                String email, password;
+//                email = String.valueOf(editTextEmail.getText());
+//                password = String.valueOf(editTextPassword.getText());
+//                //CHECKS IF EMAIL AND PASSWORD FIELDS ARE EMPTY
+//                if (TextUtils.isEmpty(email)){
+//                    Toast.makeText(Login.this,"Enter Email",Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if (TextUtils.isEmpty(password)){
+//                    Toast.makeText(Login.this,"Enter Password",Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                //API FOR LOGIN
+//                mAuth.signInWithEmailAndPassword(email, password)
+//                        .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                progressBar.setVisibility(View.GONE);
+//                                if (task.isSuccessful()) {
+//                                    Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
+//                                    Intent intent = new Intent(getApplicationContext(), com.example.dashboard.Activity.MainActivity.class);
+//                                    startActivity(intent);
+//                                    finish();
+//                                } else {
+//
+//                                    Toast.makeText(Login.this, "Authentication failed.",
+//                                            Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
+                // TEMPORARY FOR DEMO PURPOSES
+                Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), com.example.dashboard.Activity.MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

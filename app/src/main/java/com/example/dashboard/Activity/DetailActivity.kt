@@ -3,13 +3,8 @@ package com.example.dashboard.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.dashboard.Domain.BoostersModel
-import com.example.dashboard.R
 import com.example.dashboard.databinding.ActivityDetailBinding
 
 class DetailActivity : BaseActivity() {
@@ -72,6 +67,17 @@ class DetailActivity : BaseActivity() {
                     item.Name + " " + item.Address + " " + item.Mobile
                 )
                 startActivity(Intent.createChooser(intent, "Choose one"))
+            }
+
+            // Add OnClickListener for your hypothetical requestBtn
+            requestBtn.setOnClickListener {
+                val intent = Intent(this@DetailActivity, BoostRequestActivity::class.java)
+                // You can pass data to BoostRequestActivity if needed
+                // For example, if BoostRequestActivity needs the Booster's ID or Game ID:
+                // intent.putExtra("boosterId", item.id) // Assuming BoostersModel has an ID
+                // intent.putExtra("gameId", "someGameId") // If the game ID is relevant here
+
+                startActivity(intent)
             }
 
             Glide.with(this@DetailActivity)
